@@ -41,7 +41,7 @@
 <div align=“center”>
 <img src=“https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg”>
 </div>
-
+![<numpy>](https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg)
 
 NumPyのrandomというモジュールの中randintという関数があるという感じです。この本ではNumPy、Pandas、matplotlibについて説明されています。ここも「そういうものがあるんだ」くらいの理解をして実際にコードを書いていきましょう。
 
