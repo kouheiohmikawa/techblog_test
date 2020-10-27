@@ -38,10 +38,8 @@
 
 ## 有名なライブラリの紹介
 ここではPythonでよく用いられるライブラリを紹介していきます。ライブラリとは**外部から読み込むPythonのコードの塊**です。わかりにくいと思うので以下の図をご覧ください。今回はベクトル・行列の計算に特化したライブラリである**NumPy**を表しています。
-<div align=“center”>
-<img src=“https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg”>
-</div>
-![<numpy>](https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg)
+
+![numpy](https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg)
 
 NumPyのrandomというモジュールの中randintという関数があるという感じです。この本ではNumPy、Pandas、matplotlibについて説明されています。ここも「そういうものがあるんだ」くらいの理解をして実際にコードを書いていきましょう。
 
