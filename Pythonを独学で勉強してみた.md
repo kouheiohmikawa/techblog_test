@@ -73,7 +73,7 @@ NumPyのrandomというモジュールの中randintという関数があると�
 報酬や環境などを設定することで学習時に収益の最大化を図るような行動を学習する。
 囲碁などの対戦型AIで用いられることが多い。
 
-![machinelearning](https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg)
+![machinelearning](https://storage.googleapis.com/techblog/images/python_introduction/machinelaerning.png)
 
 ここでは画像認識を学ぶので、教師あり学習にあたります。
 ここでいったん機械学習を実装する流れを大まかに説明すると
@@ -93,7 +93,7 @@ NumPyのrandomというモジュールの中randintという関数があると�
 ## 深層学習の実装
 ここでは**MNIST**という手書き文字のデータセットを用いて、簡単な深層学習の実装をします。**この章を最後まで読み終えると、手書き数字画像データから数字を判別できるコードを書けるようになります。**具体的にはディープニューラルネットワーク(DNN)という、層が何層にも重なったモデルを作り、DNNのハイパーパラメータをチューニングします。この流れはこれまでのDNN以外の機械学習の流れと同じです。
 
-![mnist](https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg)
+![mnist](https://storage.googleapis.com/techblog/images/python_introduction/mnist.png)
 
 ## CNNの実装
 ついに最後の、画像認識でよく用いられる**CNN**を実装する章です。画像認識とは、画像や映像に映る文字や顔などいった「モノ」や「特徴」を検出する技術です。具体的には、画像の分類やモノの位置の推定など様々な認識技術が挙げられます。CNNとは畳み込みニューラルネットワークのことでConvolutional Neural Networkの略となります。
@@ -104,19 +104,19 @@ CNNは**「畳み込み層」**と**「プーリング層」**と呼ばれる層
 
 これらの層は[Keras](https://keras.io/ja/)と[TensorFlow](https://www.tensorflow.org/?hl=ja)というライブラリを使うと簡単に実装することができます。ここでは先ほども登場したMNISTに加え、10種類のカラー画像のデータセットである**CIFAR10**を使って、CNNの実装をしていきます。
 
-![cifar10](https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg)
+![cifar10](https://storage.googleapis.com/techblog/images/python_introduction/CIFAR-10.png)
 
 
 ## データの水増し・転移学習
 画像認識では、画像データとそのラベルの組み合わせが大量に必要になります。しかし、モデルを学習させるのに十分な量のデータセットを揃えることができないことは多々あります。そこで、**画像の水増し**というテクニックを使って、持っているデータの量を増やすことができます。具体的には、画像を反転・ずらし・色を変えるなどして、新たなデータを作ります。
 この作業もKerasの**ImageDataGenerator**を使うと簡単に実装することができます。ImageDataGeneratorには多くの引数が存在し、それらの値を調節することで、画像を水増しすることができます。
 
-![imagedatagenerator](https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg)
+![imagedatagenerator](https://storage.googleapis.com/techblog/images/python_introduction/imagedatageberator.jpeg)
 
 また、大規模なニューラルネットワークを学習させるには、膨大なデータと時間が必要となります。そこで、**「大量のデータですでに学習され公開されているモデルを使って新たなモデルを作ろう」**というものが**転移学習**です。Kerasでは**ImageNet(120万枚、1000クラスの巨大なデータセット)**で学習済みの画像分類モデルとその重みをダウンロードして、使用します。公開されているモデルは数種類ありますが、ここでは**VGG16**というモデルを使います。VGG16は1000クラスの分類モデルなので、出力ユニットは1000個ありますが、最後の全結合層は使わずに途中までの層を特徴抽出のために使用することで転移学習に用いることができます。
 
 
-![imagedatagenerator](https://storage.googleapis.com/techblog/images/python_introduction/numpy.jpg)
+![vgg16](https://storage.googleapis.com/techblog/images/python_introduction/vgg16.png)
 
 
 # 最後に
